@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="id" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mata, Telinga, dan Hati: Semua Ada Pertanggungjawabannya - Edukasi</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#faf8f5',
+                        'cream-dark': '#f3efe6',
+                        darkbg: '#181716',
+                        darkcard: '#22201e',
+                        accent: '#8c6d53',
+                        'accent-dark': '#d4a373'
+                    },
+                    fontFamily: {
+                        serif: ['Georgia', 'Cambria', 'Times New Roman', 'serif'],
+                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+                        arabic: ['Amiri', 'Traditional Arabic', 'serif']
+                    }
+                }
+            }
+        };
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Style CSS Custom -->
+    <style>
+        body {
+            transition: background-color 0.25s ease, color 0.25s ease;
+            background-color: #faf8f5;
+        }
+
+        .dark body {
+            background-color: #181716;
+        }
+
+        .drop-cap {
+            float: left;
+            font-family: 'Georgia', serif;
+            font-size: 3.5rem;
+            line-height: 0.85;
+            padding-top: 4px;
+            padding-right: 10px;
+            padding-left: 2px;
+            font-weight: 700;
+            color: #795548;
+        }
+
+        .dark .drop-cap {
+            color: #caa178;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #e2ddd5;
+            border-radius: 3px;
+        }
+
+        .dark ::-webkit-scrollbar-thumb {
+            background: #33312e;
+        }
+
+        #progress-bar {
+            width: 0%;
+        }
+    </style>
+</head>
+<body class="bg-cream dark:bg-darkbg text-stone-800 dark:text-stone-200 font-serif antialiased min-h-screen flex flex-col selection:bg-amber-100 dark:selection:bg-amber-900/50">
+
+    <!-- Scroll Progress Bar -->
+    <div id="progress-bar" class="fixed top-0 left-0 h-0.5 bg-stone-700 dark:bg-amber-500 z-50 transition-all duration-150"></div>
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 w-full py-4 bg-cream/80 dark:bg-darkbg/80 backdrop-blur-md border-b border-stone-200/50 dark:border-stone-800/50 transition-all duration-300">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 flex items-center justify-between">
+            <div class="w-24 hidden sm:block"></div>
+
+            <a href="#" class="group relative font-serif italic font-bold text-xl sm:text-2xl text-stone-900 dark:text-stone-100 tracking-tight transition-transform duration-300 hover:scale-105 mx-auto sm:mx-0">
+                <span class="bg-gradient-to-r from-stone-900 via-stone-700 to-stone-900 dark:from-white dark:via-stone-300 dark:to-white bg-clip-text text-transparent">
+                    Edukasi & Refleksi 
+                </span>
+                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-amber-700 dark:bg-amber-400 transition-all duration-300 group-hover:w-full"></span>
+            </a>
+
+            <!-- Kontrol Ukuran Teks & Tema -->
+            <div class="flex items-center space-x-3 text-xs sm:text-sm font-sans">
+                <div class="flex items-center bg-stone-200/70 dark:bg-stone-800/80 rounded-full px-3 py-1.5 text-stone-700 dark:text-stone-300 font-medium shadow-inner transition-all hover:shadow-md">
+                    <button id="btn-text-decrease" title="Kecilkan Teks" class="hover:text-amber-700 dark:hover:text-amber-400 active:scale-90 px-1.5 transition-all focus:outline-none">A-</button>
+                    <span class="text-stone-400 dark:text-stone-600 px-1 text-xs select-none">|</span>
+                    <button id="btn-text-increase" title="Besarkan Teks" class="hover:text-amber-700 dark:hover:text-amber-400 active:scale-90 px-1.5 transition-all focus:outline-none">A+</button>
+                </div>
+
+                <button id="btn-theme-toggle" title="Ubah Mode Layar" class="p-2 bg-stone-200/70 dark:bg-stone-800/80 text-stone-700 dark:text-stone-300 hover:text-amber-600 dark:hover:text-amber-400 hover:scale-110 active:scale-95 transition-all focus:outline-none rounded-full shadow-sm hover:shadow-md">
+                    <i id="theme-icon" class="fa-solid fa-moon text-base transition-transform duration-300"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow max-w-2xl mx-auto px-5 sm:px-6 py-6 sm:py-10 w-full">
+        <article>
+            <!-- Article Header -->
+            <header class="mb-8">
+                <div class="flex items-center flex-wrap gap-2 text-xs font-sans text-stone-500 dark:text-stone-400 mb-4">
+                    <span class="bg-[#ede8e1] dark:bg-stone-800 text-stone-700 dark:text-stone-300 px-3 py-1 rounded-full font-normal transition-all duration-300 hover:scale-105 hover:bg-stone-300 dark:hover:bg-stone-700 hover:shadow-sm cursor-pointer">
+                        Refleksi & Tazkiyatun Nafs
+                    </span>
+                    
+                    <span class="flex items-center gap-1.5 ml-1 transition-all duration-300 hover:text-stone-800 dark:hover:text-stone-200 group cursor-default">
+                        <i class="fa-regular fa-calendar text-stone-400 group-hover:scale-110 group-hover:text-stone-600 dark:group-hover:text-stone-300 transition-transform duration-300"></i>
+                        <time datetime="2026-10-11">11 Oktober 2026</time>
+                    </span>
+                    
+                    <span class="text-stone-300 dark:text-stone-700">•</span>
+                    
+                    <span class="flex items-center gap-1.5 transition-all duration-300 hover:text-stone-800 dark:hover:text-stone-200 group cursor-default">
+                        <i class="fa-regular fa-clock text-stone-400 group-hover:animate-spin transition-transform duration-500"></i>
+                        <span id="read-timer" class="font-mono tabular-nums">04:00</span>
+                    </span>
+                </div>
+
+                <h1 class="text-3xl sm:text-4xl font-bold font-serif text-stone-900 dark:text-stone-100 leading-snug sm:leading-tight mb-3">
+                    Mata, Telinga, dan Hati: Semua Ada Pertanggungjawabannya
+                </h1>
+                
+                <p class="text-lg sm:text-xl font-serif italic text-amber-900 dark:text-amber-400 mb-6 leading-relaxed">
+                    Pengingat diri tentang pengawasan malaikat dan pertanggungjawaban mutlak atas setiap pancaindra serta isi hati manusia di hadapan Allah SWT.
+                </p>
+
+                <div class="w-full border-b border-stone-200/80 dark:border-stone-800 mb-6"></div>
+            </header>
+
+            <!-- Article Body -->
+            <div id="article-body" class="text-lg space-y-6 text-stone-800 dark:text-stone-300 leading-relaxed font-serif text-justify hyphens-auto transition-all duration-200">
+                
+                <p class="leading-relaxed">
+                    <span class="drop-cap">S</span>etiap detik dalam kehidupan kita tidak pernah luput dari pengawasan Allah SWT. Manusia sering kali merasa bebas melakukan, mengucapkan, atau merencanakan sesuatu secara tersembunyi, padahal ada sistem pencatatan ilahi yang sangat teliti dan tidak pernah alpa.
+                </p>
+
+                <!-- Bagian 1: Pencatatan Lisan & Perbuatan -->
+                <h2 class="text-2xl font-bold font-serif text-stone-900 dark:text-stone-100 pt-4 pb-1 border-b border-stone-200/60 dark:border-stone-800 text-left">
+                    Pengawasan Ketat atas Lisan dan Perbuatan
+                </h2>
+
+                <p class="leading-relaxed">
+                    Allah SWT menegaskan dalam firman-Nya bahwa setiap ucapan yang keluar dari lisan kita langsung diawasi dan dicatat oleh malaikat:
+                </p>
+
+                <div class="p-4 bg-[#f5f1ea] dark:bg-stone-800/50 rounded-xl border-l-4 border-amber-800 dark:border-amber-500 font-sans text-sm space-y-2">
+                    <p class="font-arabic text-right text-xl text-stone-900 dark:text-stone-100 leading-loose" dir="rtl">
+                        مَّا يَلْفِظُ مِن قَوْلٍ إِلَّا لَدَيْهِ رَقِيبٌ عَتِيدٌ
+                    </p>
+                    <p class="font-serif text-base text-stone-800 dark:text-stone-300 italic">
+                        "Tidak ada suatu kata yang diucapkannya melainkan ada di sisinya malaikat pengawas yang selalu siap (mencatat)." 
+                    </p>
+                    <p class="text-xs text-stone-500 dark:text-stone-400 font-semibold">— QS. Qaf (50): 18</p>
+                </div>
+
+                <p class="leading-relaxed">
+                    Tidak hanya lisan, seluruh amal perbuatan kita juga senantiasa dijaga dan dicatat secara rinci oleh para malaikat yang mulia:
+                </p>
+
+                <div class="p-4 bg-[#f5f1ea] dark:bg-stone-800/50 rounded-xl border-l-4 border-stone-500 dark:border-stone-600 font-sans text-sm space-y-2">
+                    <p class="font-arabic text-right text-xl text-stone-900 dark:text-stone-100 leading-loose" dir="rtl">
+                        وَإِنَّ عَلَيْكُمْ لَحَافِظِينَ . كِرَامًا كَاتِبِينَ . يَعْلَمُونَ مَا تَفْعَلُونَ
+                    </p>
+                    <p class="font-serif text-base text-stone-800 dark:text-stone-300 italic">
+                        “Padahal sesungguhnya bagi kamu ada (malaikat-malaikat) yang mengawasi (pekerjaanmu), yang mulia (di sisi Allah) dan mencatat (pekerjaan-pekerjaanmu itu), mereka mengetahui apa yang kamu kerjakan.”
+                    </p>
+                    <p class="text-xs text-stone-500 dark:text-stone-400 font-semibold">— QS. Al-Infitar (82): 10-12</p>
+                </div>
+
+                <!-- Bagian 2: Rahasia dan Bisikan -->
+                <h2 class="text-2xl font-bold font-serif text-stone-900 dark:text-stone-100 pt-6 pb-1 border-b border-stone-200/60 dark:border-stone-800 text-left">
+                    Rahasia dan Bisikan yang Terdengar
+                </h2>
+
+                <p class="leading-relaxed">
+                    Terkadang manusia menyangka bahwa rahasia atau bisikan-bisikan tersembunyi aman dari pengetahuan siapa pun. Padahal Allah SWT Maha Mengetahui dan menugaskan malaikat untuk mencatatnya:
+                </p>
+
+                <div class="p-4 bg-[#f5f1ea] dark:bg-stone-800/50 rounded-xl border-l-4 border-amber-900 dark:border-amber-400 font-sans text-sm space-y-2">
+                    <p class="font-arabic text-right text-xl text-stone-900 dark:text-stone-100 leading-loose" dir="rtl">
+                        أَمْ يَحْسَبُونَ أَنَّا لَا نَسْمَعُ سِرَّهُمْ وَنَجْوَاهُم ۚ بَلَىٰ وَرُسُلُنَا لَدَيْهِمْ يَكْتُبُونَ
+                    </p>
+                    <p class="font-serif text-base text-stone-800 dark:text-stone-300 italic">
+                        “Apakah mereka mengira, bahwa Kami tidak mendengar rahasia dan bisikan-bisikan mereka? Sebenarnya (Kami mendengar), dan utusan-utusan (malaikat-malaikat) Kami selalu mencatat di samping mereka.”
+                    </p>
+                    <p class="text-xs text-stone-500 dark:text-stone-400 font-semibold">— QS. Az-Zukhruf (43): 80</p>
+                </div>
+
+                <!-- Bagian 3: Pertanggungjawaban Pancaindra dan Hati -->
+                <h2 class="text-2xl font-bold font-serif text-stone-900 dark:text-stone-100 pt-6 pb-1 border-b border-stone-200/60 dark:border-stone-800 text-left">
+                    Pertanggungjawaban Pendengaran, Penglihatan, dan Hati
+                </h2>
+
+                <p class="leading-relaxed">
+                    Setiap anugerah nikmat berupa fungsi tubuh, utamanya panca indra dan hati nurani, kelak akan dimintai pertanggungjawaban secara spesifik oleh Allah SWT:
+                </p>
+
+                <div class="p-4 bg-[#f5f1ea] dark:bg-stone-800/50 rounded-xl border-l-4 border-amber-800 dark:border-amber-500 font-sans text-sm space-y-2">
+                    <p class="font-arabic text-right text-xl text-stone-900 dark:text-stone-100 leading-loose" dir="rtl">
+                        وَلَا تَقْفُ مَا لَيْسَ لَكَ بِهِ عِلْمٌ ۚ إِنَّ السَّمْعَ وَالْبَصَرَ وَالْفُؤَادَ كُلُّ أُولَٰئِكَ كَانَ عَنْهُ مَسْئُولًا
+                    </p>
+                    <p class="font-serif text-base text-stone-800 dark:text-stone-300 italic">
+                        “Dan janganlah kamu mengikuti apa yang kamu tidak mempunyai pengetahuan tentangnya. Sesungguhnya pendengaran, penglihatan dan hati, semuanya itu akan diminta pertanggungjawabannya.”
+                    </p>
+                    <p class="text-xs text-stone-500 dark:text-stone-400 font-semibold">— QS. Al-Isra (17): 36</p>
+                </div>
+
+                <!-- Bagian 4: Keadilan Mutlak Sekecil Dzarrah -->
+                <h2 class="text-2xl font-bold font-serif text-stone-900 dark:text-stone-100 pt-6 pb-1 border-b border-stone-200/60 dark:border-stone-800 text-left">
+                    Keadilan Mutlak di Hari Akhir
+                </h2>
+
+                <p class="leading-relaxed">
+                    Tidak ada satu pun amal, baik yang tampak besar maupun yang tersembunyi sekecil biji sawi (dzarrah), yang luput dari perhitungan Allah SWT:
+                </p>
+
+                <div class="p-4 bg-[#f5f1ea] dark:bg-stone-800/50 rounded-xl border-l-4 border-stone-500 dark:border-stone-600 font-sans text-sm space-y-2">
+                    <p class="font-arabic text-right text-xl text-stone-900 dark:text-stone-100 leading-loose" dir="rtl">
+                        فَمَنْ يَعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْرًا يَرَهُ . وَمَنْ يَعْمَل مِثْقَالَ ذَرَّةٍ شَرًّا يَرَهُ
+                    </p>
+                    <p class="font-serif text-base text-stone-800 dark:text-stone-300 italic">
+                        "Barangsiapa yang mengerjakan kebaikan sebesar dzarrah (biji sawi/atom), niscaya dia akan melihat (balasan)nya. Dan barangsiapa yang mengerjakan kejahatan sebesar dzarrah pun, niscaya dia akan melihat (balasan)nya."
+                    </p>
+                    <p class="text-xs text-stone-500 dark:text-stone-400 font-semibold">— QS. Az-Zalzalah (99): 7-8</p>
+                </div>
+
+                <!-- Penutup / Kesimpulan -->
+                <h2 class="text-2xl font-bold font-serif text-stone-900 dark:text-stone-100 pt-6 pb-1 border-b border-stone-200/60 dark:border-stone-800 text-left">
+                    Kesimpulan
+                </h2>
+
+                <blockquote class="p-4 my-4 border-l-4 border-amber-800 dark:border-amber-500 bg-[#f5f1ea] dark:bg-stone-800/60 rounded-r-lg italic text-stone-800 dark:text-stone-200">
+                    "Mari kita jaga mata dari pandangan yang diharamkan, telinga dari pendengaran yang sia-sia, lisan dari perkataan yang tidak berguna, dan hati dari niat serta prasangka buruk. Karena setiap jengkal potensi diri ini kelak akan bersaksi dan dimintai pertanggungjawaban di hadapan-Nya."
+                </blockquote>
+
+            </div>
+        </article>
+
+        <!-- Post Action Row -->
+        <div class="mt-12 pt-6 border-t border-stone-200/90 dark:border-stone-800/80 font-sans">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div class="flex items-center space-x-3">
+                    <a href="URL_HALAMAN_TUJUAN" id="btn-share" class="group inline-flex items-center space-x-2 bg-stone-200/70 dark:bg-stone-800 hover:bg-stone-300/80 dark:hover:bg-stone-700/80 text-stone-800 dark:text-stone-200 text-xs sm:text-sm font-medium px-4 py-2 rounded-full transition-all duration-300 hover:scale-105 active:scale-95 shadow-sm hover:shadow-md focus:outline-none">
+                        <span>Lanjutkan</span>
+                        <i class="fa-solid fa-angles-right text-stone-600 dark:text-stone-400 text-xs transition-transform duration-300 group-hover:translate-x-1 group-hover:text-stone-900 dark:group-hover:text-white"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full mt-20 pb-16 font-sans text-stone-500 dark:text-stone-400 text-xs sm:text-sm">
+        <div class="max-w-xl mx-auto px-4 text-center space-y-1">
+            <p>© 2026 Edukasi & Psikologi. Ruang Baca & Edukasi.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Interaktif -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Countdown Timer Baca
+            let totalSeconds = 4 * 60;
+            const timerElement = document.getElementById('read-timer');
+
+            const countdown = setInterval(() => {
+                if (totalSeconds <= 0) {
+                    clearInterval(countdown);
+                    if (timerElement) timerElement.textContent = 'Selesai dibaca';
+                    return;
+                }
+
+                totalSeconds--;
+
+                const minutes = Math.floor(totalSeconds / 60);
+                const seconds = totalSeconds % 60;
+                const formattedMinutes = String(minutes).padStart(2, '0');
+                const formattedSeconds = String(seconds).padStart(2, '0');
+
+                if (timerElement) timerElement.textContent = `${formattedMinutes}:${formattedSeconds}`;
+            }, 1000);
+
+            // 2. Pengatur Ukuran Teks
+            const articleBody = document.getElementById('article-body');
+            const btnIncrease = document.getElementById('btn-text-increase');
+            const btnDecrease = document.getElementById('btn-text-decrease');
+            const fontSizes = ['text-base', 'text-lg', 'text-xl', 'text-2xl'];
+            let currentSizeIndex = 1;
+
+            if (btnIncrease && articleBody) {
+                btnIncrease.addEventListener('click', () => {
+                    if (currentSizeIndex < fontSizes.length - 1) {
+                        articleBody.classList.remove(fontSizes[currentSizeIndex]);
+                        currentSizeIndex++;
+                        articleBody.classList.add(fontSizes[currentSizeIndex]);
+                    }
+                });
+            }
+
+            if (btnDecrease && articleBody) {
+                btnDecrease.addEventListener('click', () => {
+                    if (currentSizeIndex > 0) {
+                        articleBody.classList.remove(fontSizes[currentSizeIndex]);
+                        currentSizeIndex--;
+                        articleBody.classList.add(fontSizes[currentSizeIndex]);
+                    }
+                });
+            }
+
+            // 3. Sakelar Tema (Dark / Light Mode)
+            const themeToggleBtn = document.getElementById('btn-theme-toggle');
+            const themeIcon = document.getElementById('theme-icon');
+            const htmlElement = document.documentElement;
+
+            if (themeToggleBtn && themeIcon) {
+                themeToggleBtn.addEventListener('click', () => {
+                    if (htmlElement.classList.contains('dark')) {
+                        htmlElement.classList.remove('dark');
+                        htmlElement.classList.add('light');
+                        themeIcon.classList.remove('fa-sun');
+                        themeIcon.classList.add('fa-moon');
+                    } else {
+                        htmlElement.classList.remove('light');
+                        htmlElement.classList.add('dark');
+                        themeIcon.classList.remove('fa-moon');
+                        themeIcon.classList.add('fa-sun');
+                    }
+                });
+            }
+
+            // 4. Bar Progres Gulir Layar
+            window.addEventListener('scroll', () => {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+                const progressBar = document.getElementById('progress-bar');
+                if (progressBar) progressBar.style.width = `${scrolled}%`;
+            });
+
+            // 5. Fitur Salin Tautan
+            function copyArticleLink(event) {
+                const dummy = document.createElement('input');
+                document.body.appendChild(dummy);
+                dummy.value = window.location.href;
+                dummy.select();
+                document.execCommand('copy');
+                document.body.removeChild(dummy);
+
+                const button = event.currentTarget;
+                const originalHTML = button.innerHTML;
+                button.innerHTML = '<i class="fa-solid fa-check text-green-600 text-xs"></i><span>Tersalin!</span>';
+                setTimeout(() => {
+                    button.innerHTML = originalHTML;
+                }, 2000);
+            }
+
+            const btnShare = document.getElementById('btn-share');
+            if (btnShare) btnShare.addEventListener('click', copyArticleLink);
+        });
+    </script>
+</body>
+</html>
