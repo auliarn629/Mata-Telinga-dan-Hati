@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="id" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mengenal Nafsu Lawwamah & 3 Tingkatan Jiwa Dalam Islam - Edukasi</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#faf8f5',
+                        'cream-dark': '#f3efe6',
+                        darkbg: '#181716',
+                        darkcard: '#22201e',
+                        accent: '#8c6d53',
+                        'accent-dark': '#d4a373'
+                    },
+                    fontFamily: {
+                        serif: ['Georgia', 'Cambria', 'Times New Roman', 'serif'],
+                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+                        arabic: ['Amiri', 'Traditional Arabic', 'serif']
+                    }
+                }
+            }
+        };
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Style CSS Custom -->
+    <style>
+        body {
+            transition: background-color 0.25s ease, color 0.25s ease;
+            background-color: #faf8f5;
+        }
+
+        .dark body {
+            background-color: #181716;
+        }
+
+        .drop-cap {
+            float: left;
+            font-family: 'Georgia', serif;
+            font-size: 3.5rem;
+            line-height: 0.85;
+            padding-top: 4px;
+            padding-right: 10px;
+            padding-left: 2px;
+            font-weight: 700;
+            color: #795548;
+        }
+
+        .dark .drop-cap {
+            color: #caa178;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #e2ddd5;
+            border-radius: 3px;
+        }
+
+        .dark ::-webkit-scrollbar-thumb {
+            background: #33312e;
+        }
+
+        #progress-bar {
+            width: 0%;
+        }
+    </style>
+</head>
+<body class="bg-cream dark:bg-darkbg text-stone-800 dark:text-stone-200 font-serif antialiased min-h-screen flex flex-col selection:bg-amber-100 dark:selection:bg-amber-900/50">
+
+    <!-- Scroll Progress Bar -->
+    <div id="progress-bar" class="fixed top-0 left-0 h-0.5 bg-stone-700 dark:bg-amber-500 z-50 transition-all duration-150"></div>
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 w-full py-4 bg-cream/80 dark:bg-darkbg/80 backdrop-blur-md border-b border-stone-200/50 dark:border-stone-800/50 transition-all duration-300">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 flex items-center justify-between">
+            <div class="w-24 hidden sm:block"></div>
+
+            <a href="#" class="group relative font-serif italic font-bold text-xl sm:text-2xl text-stone-900 dark:text-stone-100 tracking-tight transition-transform duration-300 hover:scale-105 mx-auto sm:mx-0">
+                <span class="bg-gradient-to-r from-stone-900 via-stone-700 to-stone-900 dark:from-white dark:via-stone-300 dark:to-white bg-clip-text text-transparent">
+                    Edukasi & Refleksi 
+                </span>
+                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-amber-700 dark:bg-amber-400 transition-all duration-300 group-hover:w-full"></span>
+            </a>
+
+            <!-- Kontrol Ukuran Teks & Tema -->
+            <div class="flex items-center space-x-3 text-xs sm:text-sm font-sans">
+                <div class="flex items-center bg-stone-200/70 dark:bg-stone-800/80 rounded-full px-3 py-1.5 text-stone-700 dark:text-stone-300 font-medium shadow-inner transition-all hover:shadow-md">
+                    <button id="btn-text-decrease" title="Kecilkan Teks" class="hover:text-amber-700 dark:hover:text-amber-400 active:scale-90 px-1.5 transition-all focus:outline-none">A-</button>
+                    <span class="text-stone-400 dark:text-stone-600 px-1 text-xs select-none">|</span>
+                    <button id="btn-text-increase" title="Besarkan Teks" class="hover:text-amber-700 dark:hover:text-amber-400 active:scale-90 px-1.5 transition-all focus:outline-none">A+</button>
+                </div>
+
+                <button id="btn-theme-toggle" title="Ubah Mode Layar" class="p-2 bg-stone-200/70 dark:bg-stone-800/80 text-stone-700 dark:text-stone-300 hover:text-amber-600 dark:hover:text-amber-400 hover:scale-110 active:scale-95 transition-all focus:outline-none rounded-full shadow-sm hover:shadow-md">
+                    <i id="theme-icon" class="fa-solid fa-moon text-base transition-transform duration-300"></i>
+                </button>
+            </div>          
+        </div>      
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow max-w-2xl mx-auto px-5 sm:px-6 py-6 sm:py-10 w-full">
+        <article>
+            <!-- Article Header -->
+            <header class="mb-8">
+                <div class="flex items-center flex-wrap gap-2 text-xs font-sans text-stone-500 dark:text-stone-400 mb-4">
+                    <span class="bg-[#ede8e1] dark:bg-stone-800 text-stone-700 dark:text-stone-300 px-3 py-1 rounded-full font-normal transition-all duration-300 hover:scale-105 hover:bg-stone-300 dark:hover:bg-stone-700 hover:shadow-sm cursor-pointer">
+                        Tazkiyatun Nufs & Akidah
+                    </span>
+                    
+                    <span class="flex items-center gap-1.5 ml-1 transition-all duration-300 hover:text-stone-800 dark:hover:text-stone-200 group cursor-default">
+                        <i class="fa-regular fa-calendar text-stone-400 group-hover:scale-110 group-hover:text-stone-600 dark:group-hover:text-stone-300 transition-transform duration-300"></i>
+                        <time datetime="2026-10-16">16 Oktober 2026</time>
+                    </span>
+                    
+                    <span class="text-stone-300 dark:text-stone-700">•</span>
+                    
+                    <span class="flex items-center gap-1.5 transition-all duration-300 hover:text-stone-800 dark:hover:text-stone-200 group cursor-default">
+                        <i class="fa-regular fa-clock text-stone-400 group-hover:animate-spin transition-transform duration-500"></i>
+                        <span id="read-timer" class="font-mono tabular-nums">06:00</span>
+                    </span>
+                </div>
+
+                <h1 class="text-3xl sm:text-4xl font-bold font-serif text-stone-900 dark:text-stone-100 leading-snug sm:leading-tight mb-3">
+                    Nafsu Lawwamah: Mengenal Hakikat Jiwa yang Suka Mencela Diri
+                </h1>
+                
+                <p class="text-lg sm:text-xl font-serif italic text-amber-900 dark:text-amber-400 mb-6 leading-relaxed">
+                    Memahami tingkatan hawa nafsu dalam Islam, perjalanan spiritual manusia, serta bagaimana bisikan malaikat dan setan mempengaruhi kondisi hati.
+                </p>
+
+
+                <div class="w-full border-b border-stone-200/80 dark:border-stone-800 mb-6"></div> 
+
+                <div class="flex items-center gap-3.5">
+                    <div class="w-11 h-11 rounded-full bg-[#e3ded5] dark:bg-stone-800 flex items-center justify-center font-sans font-medium text-stone-700 dark:text-stone-300 text-sm">
+                        AR
+                    </div>
+                    <div>
+                        <h2 class="font-sans font-bold text-stone-900 dark:text-stone-100 text-sm sm:text-base leading-tight">
+                            Aulia Rahman
+                        </h2>
+                        <p class="font-sans text-xs text-stone-500 dark:text-stone-400 mt-0.5">
+                            Penulis & Pengembang Web Lepas
+                        </p>
+                    </div>
+                </div>
+
+            </header>
+
+            <!-- Article Body -->
+            <div id="article-body" class="text-lg space-y-6 text-stone-800 dark:text-stone-300 leading-relaxed font-serif text-justify hyphens-auto transition-all duration-200">
+                
+                <p class="leading-relaxed">
+                    <span class="drop-cap">N</span>afsu Lawwamah adalah bentuk atau tingkatan jiwa (hawa nafsu) dalam Islam yang suka mencela, menyesali, atau mengoreksi diri atas kesalahan, dosa, maupun kelalaian yang telah diperbuat. Istilah ini berasal dari bahasa Arab (<em>an-nafs al-lawwāmah</em>) dan diabadikan langsung dalam Al-Qur'an Surat Al-Qiyamah ayat 2, di mana Allah SWT bersumpah dengan jiwa yang amat menyesali dirinya sendiri.
+                </p>
+
+                <!-- Karakteristik -->
+                <h2 class="text-2xl font-bold font-serif text-stone-900 dark:text-stone-100 pt-4 pb-1 border-b border-stone-200/60 dark:border-stone-800 text-left">
+                    Karakteristik dan Sifat Nafsu Lawwamah
+                </h2>
+
+                <ul class="list-disc list-inside space-y-2 text-stone-800 dark:text-stone-300 pl-2">
+                    <li><strong class="text-stone-900 dark:text-stone-100">Suka Mencela Diri:</strong> Menegur atau merasa gelisah di dalam hati ketika melakukan perbuatan dosa, maksiat, atau ketika merasa kurang maksimal dalam beribadah kepada Allah SWT.</li>
+                    <li><strong class="text-stone-900 dark:text-stone-100">Dinamis dan Berubah-ubah:</strong> Berada di antara dorongan berbuat baik dan potensi khilaf. Pemilik nafsu ini terkadang taat dan ingin berbuat kebajikan, tetapi sewaktu-waktu bisa jatuh dalam kelalaian atau godaan hawa nafsu.</li>
+                </ul>
+
+                <!-- Tiga Jenis Nafsu -->
+                <h2 class="text-2xl font-bold font-serif text-stone-900 dark:text-stone-100 pt-6 pb-1 border-b border-stone-200/60 dark:border-stone-800 text-left">
+                    3 Jenis Nafsu Menurut Islam
+                </h2>
+
+                <p class="leading-relaxed">
+                    Setiap manusia membawa potensi kebaikan dan keburukan dalam dirinya. Al-Qur’an menggambarkan bahwa jiwa manusia dapat berubah—kadang tunduk pada dorongan maksiat, kadang menyesali dosa, hingga mencapai ketenangan bersama Allah. Tiga ringkasan jenis nafsu tersebut adalah:
+                </p>
+
+                <ol class="list-decimal list-inside space-y-2 text-stone-800 dark:text-stone-300 pl-2">
+                    <li><strong class="text-stone-900 dark:text-stone-100">Nafsu Ammarah:</strong> Jiwa yang condong mengajak kepada keburukan dan kejahatan.</li>
+                    <li><strong class="text-stone-900 dark:text-stone-100">Nafsu Lawwamah:</strong> Jiwa yang mulai sadar, kerap merenung, dan mencela diri saat berbuat salah atau lalai.</li>
+                    <li><strong class="text-stone-900 dark:text-stone-100">Nafsu Muthmainnah:</strong> Jiwa yang tenang, tenteram, dan mantap dalam ketaatan kepada Allah SWT.</li>
+                </ol>
+
+                <!-- Diskusi: Tiga Jiwa atau Satu Jiwa? -->
+                <h2 class="text-2xl font-bold font-serif text-stone-900 dark:text-stone-100 pt-6 pb-1 border-b border-stone-200/60 dark:border-stone-800 text-left">
+                    Apakah Manusia Memiliki Tiga Nafsu atau Satu Jiwa?
+                </h2>
+
+                <p class="leading-relaxed">
+                    Sebagian orang berpendapat bahwa manusia memiliki tiga macam jiwa secara terpisah: <em>Nafs Muṭma’innah</em> (QS. Al-Fajr: 27), <em>Nafs Lawwāmah</em> (QS. Al-Qiyāmah: 1–2), dan <em>Nafs Ammārah bis-Sū’</em> (QS. Yūsuf: 53).
+                </p>
+
+                <p class="leading-relaxed">
+                    Namun, menurut penelitian para ulama, <strong class="text-stone-900 dark:text-stone-100">hakikatnya jiwa manusia itu hanya satu</strong>, tetapi memiliki banyak sifat dan keadaan. Setiap kali ia menampakkan satu sifat tertentu, ia dinamai sesuai dengan sifat tersebut.
+                </p>
+
+                <!-- Rincian Keadaan Jiwa -->
+                <h3 class="text-xl font-bold font-serif text-stone-900 dark:text-stone-100 pt-4 text-left">
+                    1. Nafsu Muṭma’innah (Jiwa yang Tenang)
+                </h3>
+                <p class="leading-relaxed">
+                    Disebut <em>nafs muṭma’innah</em> karena ia tenang kepada Rabb-nya. Ia tunduk dalam peribadahan, cinta, dan kembali kepada-Nya; bertawakal, ridha dengan ketetapan-Nya, dan bersandar penuh kepada-Nya. Rasa tenteram itu meresap ke seluruh jiwa, hati, dan lahir batin.
+                </p>
+
+                <div class="p-4 bg-[#f5f1ea] dark:bg-stone-800/50 rounded-xl border-l-4 border-amber-800 dark:border-amber-500 font-sans text-sm space-y-2">
+                    <p class="font-arabic text-right text-xl text-stone-900 dark:text-stone-100 leading-loose" dir="rtl">
+                        الَّذِينَ آمَنُوا وَتَطْمَئِنُّ قُلُوبُهُم بِذِكْرِ اللَّهِ ۗ أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ
+                    </p>
+                    <p class="font-serif text-base text-stone-800 dark:text-stone-300 italic">
+                        "(Yaitu) orang-orang yang beriman dan hati mereka menjadi tenteram dengan mengingat Allah. Ingatlah, hanya dengan mengingat Allah hati menjadi tenteram."
+                    </p>
+                    <p class="text-xs text-stone-500 dark:text-stone-400 font-semibold">
+                        — QS. Ar-Ra‘d: 28
+                    </p>
+                </div>
+
+                <h3 class="text-xl font-bold font-serif text-stone-900 dark:text-stone-100 pt-4 text-left">
+                    2. Nafsu Lawwāmah (Jiwa yang Suka Mencela)
+                </h3>
+                <p class="leading-relaxed">
+                    Para ulama menjelaskan dua sudut pandang mengenai makna <em>lawwāmah</em>:
+                </p>
+                <ul class="list-disc list-inside space-y-2 pl-2">
+                    <li><strong>Dihubungkan dengan <em>taluwwum</em> (berubah-ubah):</strong> Jiwa yang tidak menetap pada satu keadaan; mudah berbolak-balik antara ingat dan lalai, taat dan maksiat, gembira dan sedih. Ini menunjukkan betapa dinamisnya ciptaan Allah.</li>
+                    <li><strong>Dihubungkan dengan <em>lawm</em> (celaan):</strong> Hasan Al-Bashri rahimahullāh berkata: <em>"Seorang mukmin selalu mencela dirinya: 'Apa maksudku dengan ini? Mengapa aku melakukan itu?'"</em> Celaan ini adalah tanda keimanan.</li>
+                </ul>
+
+                <p class="leading-relaxed">
+                    Nafsu Lawwāmah ini terbagi lagi menjadi dua jenis:
+                </p>
+                <blockquote class="p-4 border-l-4 border-stone-500 dark:border-stone-600 bg-[#f5f1ea] dark:bg-stone-800/60 rounded-r-lg text-sm font-sans space-y-2">
+                    <p><strong>1. Lawwāmah yang tercela:</strong> Jiwa yang zalim dan bodoh, yang dicela oleh Allah dan malaikat.</p>
+                    <p><strong>2. Lawwāmah yang terpuji:</strong> Jiwa yang selalu menegur pemiliknya karena merasa kurang dalam beribadah meskipun telah berusaha sekuat tenaga.</p>
+                </blockquote>
+
+                <h3 class="text-xl font-bold font-serif text-stone-900 dark:text-stone-100 pt-4 text-left">
+                    3. Nafsu Ammārah (Jiwa yang Mengajak Keburukan)
+                </h3>
+                <p class="leading-relaxed">
+                    Secara fitrah, jiwa ini condong mengajak kepada keburukan kecuali bila Allah memberikan rahmat dan taufik-Nya.
+                </p>
+
+                <div class="p-4 bg-[#f5f1ea] dark:bg-stone-800/50 rounded-xl border-l-4 border-amber-900 dark:border-amber-400 font-sans text-sm space-y-2">
+                    <p class="font-arabic text-right text-xl text-stone-900 dark:text-stone-100 leading-loose" dir="rtl">
+                        وَمَا أُبَرِّئُ نَفْسِي ۚ إِنَّ النَّفْسَ لَأَمَّارَةٌ بِالسُّوءِ إِلَّا مَا رَحِمَ رَبِّي ۚ إِنَّ رَبِّي غَفُورٌ رَّحِيمٌ
+                    </p>
+                    <p class="font-serif text-base text-stone-800 dark:text-stone-300 italic">
+                        "Aku tidak membebaskan diriku (dari kesalahan), karena sesungguhnya jiwa itu benar-benar menyuruh kepada kejahatan, kecuali jiwa yang diberi rahmat oleh Rabbku. Sungguh, Rabbku Maha Pengampun lagi Maha Penyayang."
+                    </p>
+                    <p class="text-xs text-stone-500 dark:text-stone-400 font-semibold">
+                        — QS. Yūsuf: 53
+                    </p>
+                </div>
+
+                <!-- Pertolongan Allah dan Bisikan -->
+                <h2 class="text-2xl font-bold font-serif text-stone-900 dark:text-stone-100 pt-6 pb-1 border-b border-stone-200/60 dark:border-stone-800 text-left">
+                    Pertolongan Allah dan Bisikan Jiwa
+                </h2>
+
+                <p class="leading-relaxed">
+                    Perjalanan ruhani seorang hamba bergerak dari <em>ammārah</em> menjadi <em>lawwāmah</em>, hingga naik mencapai <em>muṭma’innah</em>. Dalam proses ini, terdapat dua pengaruh yang membisiki manusia:
+                </p>
+
+                <div class="p-4 bg-[#f5f1ea] dark:bg-stone-800/50 rounded-xl border-l-4 border-amber-800 dark:border-amber-500 font-sans text-sm space-y-2">
+                    <p class="font-arabic text-right text-xl text-stone-900 dark:text-stone-100 leading-loose" dir="rtl">
+                        إِنَّ لِلشَّيْطَانِ لَمَّةً بِابْنِ آدَمَ، وَلِلْمَلَكِ لَمَّةً، فَأَمَّا لَمَّةُ الشَّيْطَانِ فَإِيعَادٌ بِالشَّرِّ وَتَكْذِيبٌ بِالْحَقِّ، وَأَمَّا لَمَّةُ الْمَلَكِ فَإِيعَادٌ بِالْخَيْرِ وَتَصْدِيقٌ بِالْحَقِّ...
+                    </p>
+                    <p class="font-serif text-base text-stone-800 dark:text-stone-300 italic">
+                        "Sesungguhnya setan memiliki bisikan (limmah) kepada anak Adam, dan malaikat juga memiliki bisikan. Bisikan setan adalah janji keburukan dan pendustaan terhadap kebenaran, sedangkan bisikan malaikat adalah janji kebaikan dan pembenaran terhadap kebenaran. Maka siapa yang merasakan bisikan baik itu, ketahuilah bahwa itu dari Allah, dan hendaklah ia memuji Allah..."
+                    </p>
+                    <p class="text-xs text-stone-500 dark:text-stone-400 font-semibold">
+                        — HR. Tirmidzi & Ahmad
+                    </p>
+                </div>
+
+                <!-- Kesimpulan -->
+                <h2 class="text-2xl font-bold font-serif text-stone-900 dark:text-stone-100 pt-6 pb-1 border-b border-stone-200/60 dark:border-stone-800 text-left">
+                    Kesimpulan
+                </h2>
+
+                <p class="leading-relaxed">
+                    Jiwa manusia hakikatnya satu, tetapi melewati tiga keadaan: <strong>Ammārah</strong> (keburukan), <strong>Lawwāmah</strong> (penyesalan & koreksi), dan <strong>Muṭma’innah</strong> (ketenangan sempurna). Perjuangan seorang mukmin adalah terus menaikkan kualitas jiwanya hingga kelak dipanggil dengan penuh kelembutan oleh Allah SWT:
+                </p>
+
+                <blockquote class="p-4 my-4 border-l-4 border-amber-800 dark:border-amber-500 bg-[#f5f1ea] dark:bg-stone-800/60 rounded-r-lg italic text-stone-800 dark:text-stone-200">
+                    <p class="font-arabic text-right text-xl not-italic mb-2" dir="rtl">
+                        يَا أَيَّتُهَا النَّفْسُ الْمُطْمَئِنَّةُ ۝ ارْجِعِي إِلَىٰ رَبِّكِ رَاضِيَةً مَّرْضِيَّةً
+                    </p>
+                    "Wahai jiwa yang tenang, kembalilah kepada Rabbmu dengan ridha dan diridhai." (QS. Al-Fajr: 27–28)
+                </blockquote>
+
+            </div>
+        </article>
+
+        <!-- Post Action Row -->
+        <div class="mt-12 pt-6 border-t border-stone-200/90 dark:border-stone-800/80 font-sans">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div class="flex items-center space-x-3">
+                    <a href="URL_HALAMAN_TUJUAN" id="btn-share" class="group inline-flex items-center space-x-2 bg-stone-200/70 dark:bg-stone-800 hover:bg-stone-300/80 dark:hover:bg-stone-700/80 text-stone-800 dark:text-stone-200 text-xs sm:text-sm font-medium px-4 py-2 rounded-full transition-all duration-300 hover:scale-105 active:scale-95 shadow-sm hover:shadow-md focus:outline-none">
+                        <span>Lanjutkan</span>
+                        <i class="fa-solid fa-angles-right text-stone-600 dark:text-stone-400 text-xs transition-transform duration-300 group-hover:translate-x-1 group-hover:text-stone-900 dark:group-hover:text-white"></i>
+                    </a>
+                </div>
+
+                <div class="flex items-center space-x-2 text-xs sm:text-sm text-stone-500 dark:text-stone-400">
+                    <span>Sumber / Referensi:</span>
+                    <a href="https://rumaysho.com/40708-3-jenis-nafsu-dalam-diri-manusia-menurut-islam-ammarah-lawwamah-dan-mu%E1%B9%ADmainnah.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center font-bold text-amber-800 dark:text-amber-400 hover:underline">
+                        <span>Rumaysho.com</span>
+                    </a>
+                </div>
+            </div>  
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-stone-900 border-t border-stone-200/60 dark:border-stone-800 py-8 mt-16">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center text-sm text-stone-500 dark:text-stone-400 space-y-3">
+            <p>&copy; 2026 Aulia Rahman. Ruang Coret-Coret Pribadi.</p>
+            <p class="text-xs">Dibuat dengan kesederhanaan, coklat, dan kode bersih.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Interaktif -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Countdown Timer Baca (diset 6 menit untuk artikel ini)
+            let totalSeconds = 6 * 60;
+            const timerElement = document.getElementById('read-timer');
+
+            const countdown = setInterval(() => {
+                if (totalSeconds <= 0) {
+                    clearInterval(countdown);
+                    if (timerElement) timerElement.textContent = 'Selesai dibaca';
+                    return;
+                }
+
+                totalSeconds--;
+
+                const minutes = Math.floor(totalSeconds / 60);
+                const seconds = totalSeconds % 60;
+                const formattedMinutes = String(minutes).padStart(2, '0');
+                const formattedSeconds = String(seconds).padStart(2, '0');
+
+                if (timerElement) timerElement.textContent = `${formattedMinutes}:${formattedSeconds}`;
+            }, 1000);
+
+            // 2. Pengatur Ukuran Teks
+            const articleBody = document.getElementById('article-body');
+            const btnIncrease = document.getElementById('btn-text-increase');
+            const btnDecrease = document.getElementById('btn-text-decrease');
+            const fontSizes = ['text-base', 'text-lg', 'text-xl', 'text-2xl'];
+            let currentSizeIndex = 1;
+
+            if (btnIncrease && articleBody) {
+                btnIncrease.addEventListener('click', () => {
+                    if (currentSizeIndex < fontSizes.length - 1) {
+                        articleBody.classList.remove(fontSizes[currentSizeIndex]);
+                        currentSizeIndex++;
+                        articleBody.classList.add(fontSizes[currentSizeIndex]);
+                    }
+                });
+            }
+
+            if (btnDecrease && articleBody) {
+                btnDecrease.addEventListener('click', () => {
+                    if (currentSizeIndex > 0) {
+                        articleBody.classList.remove(fontSizes[currentSizeIndex]);
+                        currentSizeIndex--;
+                        articleBody.classList.add(fontSizes[currentSizeIndex]);
+                    }
+                });
+            }
+
+            // 3. Sakelar Tema (Dark / Light Mode)
+            const themeToggleBtn = document.getElementById('btn-theme-toggle');
+            const themeIcon = document.getElementById('theme-icon');
+            const htmlElement = document.documentElement;
+
+            if (themeToggleBtn && themeIcon) {
+                themeToggleBtn.addEventListener('click', () => {
+                    if (htmlElement.classList.contains('dark')) {
+                        htmlElement.classList.remove('dark');
+                        htmlElement.classList.add('light');
+                        themeIcon.classList.remove('fa-sun');
+                        themeIcon.classList.add('fa-moon');
+                    } else {
+                        htmlElement.classList.remove('light');
+                        htmlElement.classList.add('dark');
+                        themeIcon.classList.remove('fa-moon');
+                        themeIcon.classList.add('fa-sun');
+                    }
+                });
+            }
+
+            // 4. Bar Progres Gulir Layar
+            window.addEventListener('scroll', () => {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+                const progressBar = document.getElementById('progress-bar');
+                if (progressBar) progressBar.style.width = `${scrolled}%`;
+            });
+
+            // 5. Fitur Salin Tautan ( fitur ini saya hapus )
+            
+        });
+    </script>
+</body>
+</html>
