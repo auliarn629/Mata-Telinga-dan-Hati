@@ -116,8 +116,8 @@
                 <button id="btn-theme-toggle" title="Ubah Mode Layar" class="p-2 bg-stone-200/70 dark:bg-stone-800/80 text-stone-700 dark:text-stone-300 hover:text-amber-600 dark:hover:text-amber-400 hover:scale-110 active:scale-95 transition-all focus:outline-none rounded-full shadow-sm hover:shadow-md">
                     <i id="theme-icon" class="fa-solid fa-moon text-base transition-transform duration-300"></i>
                 </button>
-            </div>
-        </div>
+            </div>           
+        </div>       
     </header>
 
     <!-- Main Content Area -->
@@ -151,6 +151,21 @@
                     Pengingat diri tentang pentingnya menjaga lisan, bahaya ucapan sepele yang membinasakan, serta keutamaan berdiam diri dibanding mengucapkan keburukan.
                 </p>
 
+                <div class="w-full border-b border-stone-200/80 dark:border-stone-800 mb-6"></div>
+
+                <div class="flex items-center gap-3.5">
+                    <div class="w-11 h-11 rounded-full bg-[#e3ded5] dark:bg-stone-800 flex items-center justify-center font-sans font-medium text-stone-700 dark:text-stone-300 text-sm">
+                        AR
+                    </div>
+                    <div>
+                        <h2 class="font-sans font-bold text-stone-900 dark:text-stone-100 text-sm sm:text-base leading-tight">
+                            Aulia Rahman
+                        </h2>
+                        <p class="font-sans text-xs text-stone-500 dark:text-stone-400 mt-0.5">
+                            Penulis & Pengembang Web Lepas
+                        </p>
+                    </div>
+                </div>
                 
             </header>
 
@@ -282,19 +297,30 @@
         <div class="mt-12 pt-6 border-t border-stone-200/90 dark:border-stone-800/80 font-sans">
             <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                 <div class="flex items-center space-x-3">
-                    <button id="btn-share" class="group inline-flex items-center space-x-2 bg-stone-200/70 dark:bg-stone-800 hover:bg-stone-300/80 dark:hover:bg-stone-700/80 text-stone-800 dark:text-stone-200 text-xs sm:text-sm font-medium px-4 py-2 rounded-full transition-all duration-300 hover:scale-105 active:scale-95 shadow-sm hover:shadow-md focus:outline-none">
-                        <span>Bagikan Tautan</span>
-                        <i class="fa-solid fa-share-nodes text-stone-600 dark:text-stone-400 text-xs transition-transform duration-300 group-hover:scale-110"></i>
-                    </button>
+                    <a href="URL_HALAMAN_TUJUAN" id="btn-share" class="group inline-flex items-center space-x-2 bg-stone-200/70 dark:bg-stone-800 hover:bg-stone-300/80 dark:hover:bg-stone-700/80 text-stone-800 dark:text-stone-200 text-xs sm:text-sm font-medium px-4 py-2 rounded-full transition-all duration-300 hover:scale-105 active:scale-95 shadow-sm hover:shadow-md focus:outline-none">
+                        <span>Lanjutkan</span>
+                        <i class="fa-solid fa-angles-right text-stone-600 dark:text-stone-400 text-xs transition-transform duration-300 group-hover:translate-x-1 group-hover:text-stone-900 dark:group-hover:text-white"></i>
+                    </a>
                 </div>
-            </div>
+
+                <div class="flex items-center space-x-2 text-xs sm:text-sm text-stone-500 dark:text-stone-400">
+                    <span>Ditulis oleh</span>
+                    <a href="#" class="inline-flex items-center font-bold text-stone-900 dark:text-stone-100 hover:text-amber-700 dark:hover:text-amber-400 transition-colors duration-200 group">
+                        <span class="relative">
+                            Aulia Rahman
+                            <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-amber-700 dark:bg-amber-400 transition-all duration-300 group-hover:w-full"></span>
+                        </span>
+                    </a>
+                </div>
+            </div>  
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="w-full mt-20 pb-16 font-sans text-stone-500 dark:text-stone-400 text-xs sm:text-sm">
-        <div class="max-w-xl mx-auto px-4 text-center space-y-1">
-            <p>© 2026 Edukasi & Refleksi. Ruang Baca & Edukasi Islam.</p>
+    <footer class="bg-white dark:bg-stone-900 border-t border-stone-200/60 dark:border-stone-800 py-8 mt-16">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center text-sm text-stone-500 dark:text-stone-400 space-y-3">
+            <p>&copy; 2026 Aulia Rahman. Ruang Coret-Coret Pribadi.</p>
+            <p class="text-xs">Dibuat dengan kesederhanaan, coklat, dan kode bersih.</p>
         </div>
     </footer>
 
